@@ -1,14 +1,16 @@
-
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [name, setName] = useState("");
+
+  function handleName(e) {
+    setName(e.target.value);
+  }
   return (
     <>
-       <div>
-          <h1>Hello,kunal Kinholkar</h1>
-          <h2>i am software engineer</h2>
-          <p>heyyyyyyyyyyyyyyyyy</p>
-        </div>
+      <label>Username</label>
+      <input type="text" value={name} onChange={handleName} />
     </>
   );
 }
